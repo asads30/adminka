@@ -30,6 +30,58 @@ export const constantRoutes = [
     }]
   },
 
+  {
+    path: '/channels',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/channels/index'),
+        name: 'Channels',
+        meta: { title: 'Каналы', icon: 'guide', affix: true }
+      }
+    ]
+  },
+
+  {
+    path: '/products',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/products/index'),
+        name: 'Products',
+        meta: { title: 'Товары', icon: 'shopping', affix: true }
+      }
+    ]
+  },
+
+  {
+    path: '/payments',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/payments/index'),
+        name: 'Payments',
+        meta: { title: 'Платежи', icon: 'money', affix: true }
+      }
+    ]
+  },
+
+  {
+    path: '/payouts',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/payouts/index'),
+        name: 'Payouts',
+        meta: { title: 'Вывод средств', icon: 'bug', affix: true }
+      }
+    ]
+  },
+
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
