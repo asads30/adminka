@@ -36,7 +36,6 @@ const actions = {
       setUsername(userInfo.username)
       commit('SET_TOKEN', 'admin-token')
       resolve()
-      console.log(userInfo)
     })
   },
 

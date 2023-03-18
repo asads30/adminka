@@ -44,6 +44,19 @@ export const constantRoutes = [
   },
 
   {
+    path: '/users',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/users/index'),
+        name: 'Users',
+        meta: { title: 'Пользователь', icon: 'user', affix: true }
+      }
+    ]
+  },
+
+  {
     path: '/products',
     component: Layout,
     children: [
