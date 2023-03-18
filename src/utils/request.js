@@ -8,10 +8,9 @@ const service = axios.create({
   timeout: 5000
 })
 
-service.interceptors.request.use(config => {
-  config.headers['hash_data'] = `auth_date=${authDate}\nfirst_name=${firstName}\nid=${userId}\nusername=${username}`
-  return config
-})
+const test = `auth_date=${authDate}\nfirst_name=${firstName}\nid=${userId}\nusername=${username}`
+
+console.log(test)
 
 service.interceptors.response.use(
   response => {
