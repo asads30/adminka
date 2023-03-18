@@ -1,18 +1,31 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
+    <panel-group />
+    <transaction />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import PanelGroup from './components/PanelGroup'
+import Transaction from './components/Transaction'
 
 export default {
   name: 'Dashboard',
-  computed: {
-    ...mapGetters([
-      'name'
-    ])
+  components: {
+    PanelGroup,
+    Transaction
+  },
+  created() {
+    this.fetchData()
+  },
+  methods: {
+    fetchData() {
+      this.$store.dispatch('app/getUsers')
+      this.$store.dispatch('app/getChannels')
+      this.$store.dispatch('app/getProducts')
+      this.$store.dispatch('app/getPayments')
+      this.$store.dispatch('app/getPayouts')
+    }
   }
 }
 </script>
