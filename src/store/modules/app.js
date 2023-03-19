@@ -72,9 +72,9 @@ const actions = {
   toggleDevice({ commit }, device) {
     commit('TOGGLE_DEVICE', device)
   },
-  getUsers({ commit }) {
+  getUsers({ commit }, { page, pageSize }) {
     return new Promise((resolve, reject) => {
-      getUsers().then(response => {
+      getUsers({ page: page, pageSize: pageSize }).then(response => {
         const data = response
         commit('GET_USERS', data)
         resolve(data)
@@ -85,7 +85,7 @@ const actions = {
   },
   getChannels({ commit }) {
     return new Promise((resolve, reject) => {
-      getChannels().then(response => {
+      getChannels({ page: 1, pageSize: 50 }).then(response => {
         const data = response
         commit('GET_CHANNELS', response)
         resolve(data)
@@ -96,7 +96,7 @@ const actions = {
   },
   getProducts({ commit }) {
     return new Promise((resolve, reject) => {
-      getProducts().then(response => {
+      getProducts({ page: 1, pageSize: 50 }).then(response => {
         const data = response
         commit('GET_PRODUCTS', response)
         resolve(data)
@@ -107,7 +107,7 @@ const actions = {
   },
   getPayments({ commit }) {
     return new Promise((resolve, reject) => {
-      getPayments().then(response => {
+      getPayments({ page: 1, pageSize: 50 }).then(response => {
         const data = response
         commit('GET_PAYMENTS', response)
         resolve(data)
@@ -118,7 +118,7 @@ const actions = {
   },
   getPayouts({ commit }) {
     return new Promise((resolve, reject) => {
-      getPayouts().then(response => {
+      getPayouts({ page: 1, pageSize: 50 }).then(response => {
         const data = response
         commit('GET_PAYOUTS', response)
         resolve(data)

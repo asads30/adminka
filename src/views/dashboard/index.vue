@@ -20,11 +20,11 @@ export default {
   },
   methods: {
     fetchData() {
-      this.$store.dispatch('app/getUsers')
-      this.$store.dispatch('app/getChannels')
-      this.$store.dispatch('app/getProducts')
-      this.$store.dispatch('app/getPayments')
-      this.$store.dispatch('app/getPayouts')
+      this.$store.dispatch('app/getUsers', { page: 1, pageSize: 50 })
+      this.$store.dispatch('app/getChannels', { page: 1, pageSize: 50 })
+      this.$store.dispatch('app/getProducts', { page: 1, pageSize: 50 })
+      this.$store.dispatch('app/getPayments', { page: 1, pageSize: 50 })
+      this.$store.dispatch('app/getPayouts', { page: 1, pageSize: 50 })
     }
   }
 }
