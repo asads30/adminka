@@ -14,14 +14,6 @@ export function removeToken() {
   return Cookies.remove(TokenKey)
 }
 
-export function getHash() {
-  return Cookies.get('hash')
-}
-
-export function setHash(hash) {
-  return Cookies.set('hash', hash)
-}
-
 export function getTg() {
   return Cookies.get('tg')
 }
