@@ -22,11 +22,12 @@ export default {
   methods: {
     yourCallbackFunction(user) {
       this.$store.dispatch('user/login', user).then(() => {
-        this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
+        setTimeout(() => {
+          this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
+        }, 500)
       }).catch((e) => {
         console.log(e)
       })
-      localStorage.setItem('tg_data', user)
     }
   }
 }
