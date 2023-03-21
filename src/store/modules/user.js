@@ -1,4 +1,4 @@
-import { getToken, setHash, setToken, removeToken, setAuthDate, setFirstName, setUserId, setUsername } from '@/utils/auth'
+import { getToken, setToken, removeToken, setTg, setHash } from '@/utils/auth'
 import { resetRouter } from '@/router'
 
 const getDefaultState = () => {
@@ -31,10 +31,7 @@ const actions = {
     return new Promise(resolve => {
       setToken('admin-token')
       setHash(userInfo.hash)
-      setAuthDate(userInfo.auth_date)
-      setFirstName(userInfo.first_name)
-      setUserId(userInfo.id)
-      setUsername(userInfo.username)
+      setTg(userInfo)
       commit('SET_TOKEN', 'admin-token')
       resolve()
     })
