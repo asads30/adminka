@@ -31,7 +31,7 @@ const actions = {
     return new Promise(resolve => {
       setToken('admin-token')
       setHash(userInfo.hash)
-      setTg(userInfo)
+      setTg(JSON.parse(userInfo))
       commit('SET_TOKEN', 'admin-token')
       resolve()
     })
