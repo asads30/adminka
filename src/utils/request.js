@@ -7,8 +7,8 @@ const service = axios.create({
   withCredentials: true,
   timeout: 5000,
   headers: {
-    Authorization: `Bearer ${getToken}`,
-    hash_data: `${authDate}\n${firstName}\n${userId}`
+    Authorization: `Bearer ${getToken()}`,
+    hash_data: `${authDate()}\n${firstName()}\n${userId()}`
   }
 })
 
