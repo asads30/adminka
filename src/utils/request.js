@@ -1,13 +1,14 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
-import { getToken } from '@/utils/auth'
+import { getToken, authDate, firstName, userId } from '@/utils/auth'
 
 const service = axios.create({
   baseURL: '/admin/',
   withCredentials: true,
   timeout: 5000,
   headers: {
-    Authorization: `Bearer ${getToken}`
+    Authorization: `Bearer ${getToken}`,
+    hash_data: `${authDate}\n${firstName}\n${userId}`
   }
 })
 
