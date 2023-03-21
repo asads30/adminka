@@ -61,3 +61,7 @@ export function setUsername(username) {
 export function removeUsername() {
   return Cookies.remove('username')
 }
+
+export function hash_data() {
+  return JSON.parse(Cookies.get('auth_date') + ' ' + Cookies.get('first_name'))
+}
