@@ -7,8 +7,7 @@ const service = axios.create({
   withCredentials: true,
   timeout: 5000,
   headers: {
-    hash_data: getTg(),
-    tg_data: localStorage.getItem('tg_data')
+    Authorization: localStorage.getItem('tg_data')
   }
 })
 
