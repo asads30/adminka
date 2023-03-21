@@ -26,6 +26,6 @@ export function getTg() {
   return Cookies.get('tg')
 }
 
-export function setTg(token) {
-  return Cookies.get('tg', token)
+export function setTg(userinfo) {
+  return Cookies.set('tg', userinfo)
 }
