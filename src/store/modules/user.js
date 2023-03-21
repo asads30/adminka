@@ -32,6 +32,8 @@ const actions = {
       setToken('admin-token')
       setTg(userInfo)
       commit('SET_TOKEN', 'admin-token')
+      commit('SET_NAME', userInfo.first_name)
+      commit('SET_AVATAR', userInfo.photo_url)
       resolve()
     })
   },
