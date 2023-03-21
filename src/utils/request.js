@@ -8,7 +8,7 @@ const service = axios.create({
   timeout: 5000,
   headers: {
     Authorization: `Bearer ${getToken()}`,
-    hash_data: `${hash_data}`
+    hash_data: `${hash_data()}`
   }
 })
 
