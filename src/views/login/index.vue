@@ -6,7 +6,7 @@
       </div>
       <vue-telegram-login
         mode="callback"
-        telegram-login="yrauthtestbot"
+        telegram-login="yrmarkabot"
         @callback="yourCallbackFunction"
       />
     </div>
